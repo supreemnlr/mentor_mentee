@@ -6,8 +6,7 @@ class AdminsessionController < ApplicationController
   end
 def create
         valid = authenticate(params[:admin])
-        #valid_admin = Admin.find(:first,:conditions => ["username = ? and password = ?",@admin.email, @admin.password])
-
+      
         if valid
        
         session[:user_id]=valid.email       

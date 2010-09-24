@@ -1,10 +1,12 @@
 <html>
-<body>
+<body bgcolor = "pink">
+<p AlIGN ="right">
 Hello <strong><%=session[:user_id]%></strong>.
 <br><br>
-<%= link_to "logout" ,adminsession_path,:method=> :delete,:id => session[:user_id]%>
-<%= link_to "profile"  %>
-<%= link_to "Mentor" %>
-<%= link_to "Mentee"  %>
+<%= link_to "Logout |" ,adminsession_path,:method=> :delete,:id => session[:user_id]%>
+<%= link_to "View Profile |" ,admin_path,:id => session[:user_id]  %>
+<%= link_to "Mentor |" %>
+<%= link_to "Mentee |"  %>
+</p>
 </body>
 </html>
