@@ -1,0 +1,10 @@
+<html>
+<body>
+Hello <strong><%=session[:user_id]%></strong>.
+<br><br>
+<%= link_to "logout" ,adminsession_path,:method=> :delete,:id => session[:user_id]%>
+<%= link_to "profile"  %>
+<%= link_to "Mentor" %>
+<%= link_to "Mentee"  %>
+</body>
+</html>
