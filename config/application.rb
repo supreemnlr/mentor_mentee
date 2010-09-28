@@ -38,5 +38,6 @@ module MentorMentee
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+    config.secret_token = '90920a80b62c23b0c6dce32a8fc6ed96c1fae8dd7911b9868581f7b98d1336032d25c93bc9d123cb338865e6b80a1c9902e8fc57aab4dcf1b961c551547a85d8'
   end
 end

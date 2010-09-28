@@ -12,7 +12,7 @@ development:
   database: mentor_mentee_development
   pool: 5
   username: root
-  password: root
+  password: 
   socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -25,7 +25,7 @@ test:
   database: mentor_mentee_test
   pool: 5
   username: root
-  password: root
+  password: 
   socket: /var/run/mysqld/mysqld.sock
 
 production:
@@ -35,5 +35,5 @@ production:
   database: mentor_mentee_production
   pool: 5
   username: root
-  password: root
+  password: 
   socket: /var/run/mysqld/mysqld.sock

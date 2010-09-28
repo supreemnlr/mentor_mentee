@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+<div id = "user_nav">
+  <%if user_signed_in? %>
+     <p align = right >Hello, <%= current_user.email %> |
+    <%= link_to "Sign_out",destroy_user_session_path %></p>
+  <% else %>
+  <p align = right>  <%= link_to "Sign_up", new_user_registration_path %> or
+    <%= link_to "Sign_in", new_user_session_path %></p>
+  <% end %>
+</div>
 <html>
 <head>
   <title>MentorMentee</title>
@@ -6,9 +15,10 @@
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
-<body>
+<body bgcolor = "pink">
+<center>
 
 <%= yield %>
-
+</center>
 </body>
 </html>
