@@ -3,12 +3,7 @@ MentorMentee::Application.routes.draw do
 
   devise_for :users 
 
-  get "admin/index"
-
-  get "admin/new"
-
-  get "admin/create"
-
+  
    devise_scope :user do
 
   get "register"  => "devise/registrations#new" 
@@ -47,7 +42,7 @@ end
   #     resources :comments, :sales
   #     resource :seller
   #   end
-  resources :adminsession
+
   # Sample resource route with more complex sub-resources
   #   resources :products do
   #     resources :comments
@@ -55,7 +50,7 @@ end
   #       get 'recent', :on => :collection
   #     end
   #   end
-  resources :admin
+
   # Sample resource route within a namespace:
   #   namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController
