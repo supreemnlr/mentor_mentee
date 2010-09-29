@@ -1,4 +1,8 @@
 MentorMentee::Application.routes.draw do
+  namespace :admin do resources :subcategories end
+
+  namespace :admin do resources :categories end
+
   get "credentials/index"
 
   devise_for :users 

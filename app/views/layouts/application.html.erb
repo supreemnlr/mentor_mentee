@@ -14,6 +14,9 @@
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
+<h1> Mentor-Mentee </h1>
+
+<%= link_to "Student Corner", :controller => "credentials", :action => 'index' %> | <%= link_to "Faculty_corner",:controller => "credentials",:action => 'faculty'%> | <%= link_to "Packages",:controller => "credentials",:action => 'packages'%> | <%= link_to "Categories", :controller => "admin/categories" %> |  <%= link_to "Subcategories", :controller => "admin/subcategories" %> | <%= link_to "AboutUs",:controller => "credentials", :action => 'new' %> | <%= link_to "Study Material",:controller => "credentials",:action => 'stud_mat'%> | <%= link_to "Careers",:controller => "credentials", :action => 'career'%> | <%= link_to "ContactUs",:controller => "credentials",:action => 'contact'%>
 </head>
 <body bgcolor = "pink">
 <center>

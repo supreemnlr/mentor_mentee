@@ -1,0 +1,28 @@
+<h1>Listing categories</h1>
+
+<table>
+  <tr>
+    <th><h3>Categories</h3></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<ul>
+<% @categories.each do |admin_category| %>
+  <tr>
+   <td><li><%= link_to admin_category.name, :action=> 'show', :id => admin_category.id  %>
+           <%= "(#{admin_category.subcategories.count})" -%></li></td>
+</ul>
+   
+
+
+ <!--     <td><%= link_to 'Show',:action=> 'show', :id => admin_category.id %></td>
+  <td><%= link_to 'Edit', edit_admin_category_path(admin_category) %></td>
+    <td><%= link_to 'Destroy',  :confirm => 'Are you sure?', :method => :delete %></td> -->
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Category', new_admin_category_path %>
