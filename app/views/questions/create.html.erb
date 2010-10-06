@@ -1,0 +1,26 @@
+<html>
+<body bgcolor="silver">
+<center>
+<h2><p id="notice"><%= notice %></p></h2>
+<table>
+<tr>
+<p>
+  <b>Name:</b>
+  <%= @question.name %>
+</p>
+</tr>
+<tr>
+<p>
+  <b>Description:</b>
+  <%= @question.description %>
+</p>
+</tr>
+</table>
+
+
+
+
+<%= link_to 'Back', questions_path %> 
+</center>
+</body>
+</html> 

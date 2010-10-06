@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+
+Question.create(:name => 'what id sthe latest version od rails framework',:category_id => 1,:subcategory_id => 1)

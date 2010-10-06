@@ -1,0 +1,18 @@
+<html>
+<body bgcolor = "silver">
+<p id="notice"><%= notice %></p>
+ 
+<%puts "#############",@question.name%>
+<p>
+  
+<h2> <b>Question:</b> <%= @question.name %></h2>
+<br /> <br />
+<%= link_to "Answer This Question" ,:controller => 'answers',:action =>'new',:id => @question.id%>
+</p>
+<% @answerlist.each do |answer| %>
+  <tr>
+     <td> <h3><%= answer.name%> </h3></td>   
+
+<% end%>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<h1>Submit Answer</h1><br />
+
+<%= form_for(Answer.new,:url=>{:action=>:create}) do |f| %>
+  <% if @answer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@answer.errors.count, "error") %> prohibited this answer from being saved:</h2>
+
+      <ul>
+      <% @answer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <h3> Question : <%= @ques.name%> </h3>
+
+  <div class="field">
+   <h3> <%= f.label :Answer%></h3>
+    <%= f.text_area :name, :rows => 10,:cols => 60 %>
+  </div>
+  <div class="actions">
+<%=hidden_field_tag 'q_id',params[:id] %>
+    <%= f.submit %>
+  </div>
+<% end %>
+
+

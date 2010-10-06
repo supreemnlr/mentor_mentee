@@ -1,4 +1,6 @@
 MentorMentee::Application.routes.draw do
+  #resources :answers
+  resources :questions
   namespace :admin do resources :subcategories end
 
   namespace :admin do resources :categories end

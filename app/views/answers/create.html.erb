@@ -1,0 +1,18 @@
+<html>
+<body bgcolor = "silver">
+<p id="notice"><%= notice %></p>
+ 
+<%puts "#############",@question.name%>
+<p>
+  
+<h2> <b>Question:</b> <%= @question.name %></h2>
+<br /> <br />
+
+</p>
+<% @answerlist.each do |ans| %>
+  <tr>
+     <td> <h3><%= ans.name%> </h3></td>   
+
+<% end%>
+</body>
+</html>
