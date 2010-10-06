@@ -7,6 +7,7 @@ gem 'rails', '3.0.0'
 
 gem 'mysql'
 gem 'devise','1.1.2'
+gem "cancan"
 
 # Use unicorn as the web server
 # gem 'unicorn'

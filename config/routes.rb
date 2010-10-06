@@ -1,21 +1,19 @@
 MentorMentee::Application.routes.draw do
-  #resources :answers
-  resources :questions
   namespace :admin do resources :subcategories end
 
   namespace :admin do resources :categories end
 
   get "credentials/index"
 
-  devise_for :users 
+  devise_for :users, :path_names => { :sign_up => "register" } 
 
   
    devise_scope :user do
 
-  get "register"  => "devise/registrations#new" 
-  get "login"  => "devise/sessions#new"    
-  get "logout" => "devise/sessions#destroy"
-end 
+  #get "register"  => "devise/registrations#new" 
+ # get "login"  => "devise/sessions#new"    
+ # get "logout" => "devise/sessions#destroy"
+#end 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -66,7 +64,12 @@ end
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => "credentials#index"
+  resources :credentials
+  resources :login
+  resources :questions
+  resources :answers
+   root :to => 'credentials#index'
+end
 
   # See how all your routes lay out with "rake routes"
 

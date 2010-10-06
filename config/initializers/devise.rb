@@ -55,7 +55,7 @@ Devise.setup do |config|
   # You can use this to let your user access some features of your application 
   # without confirming the account, but blocking it after a certain period 
   # (ie 2 days). 
-  # config.confirm_within = 2.days
+   config.confirm_within = 2.days
 
   # ==> Configuration for :rememberable
   # The time the user will be remembered without asking for credentials again.
@@ -83,7 +83,7 @@ Devise.setup do |config|
   # Defines which strategy will be used to lock an account.
   # :failed_attempts = Locks an account after a number of failed attempts to sign in.
   # :none            = No lock strategy. You should handle locking by yourself.
-  # config.lock_strategy = :failed_attempts
+   config.lock_strategy = :failed_attempts
 
   # Defines which strategy will be used to unlock an account.
   # :email = Sends an unlock link to the user email
