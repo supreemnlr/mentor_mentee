@@ -1,4 +1,6 @@
 source 'http://rubygems.org'
+#directory "/usr/bin/rails", :glob => "{*/,}*.gemspec"
+
 
 gem 'rails', '3.0.0'
 
@@ -7,6 +9,8 @@ gem 'rails', '3.0.0'
 
 gem 'mysql'
 gem 'devise','1.1.2'
+gem 'ajaxful_rating'
+gem 'will_paginate'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -20,6 +24,7 @@ gem 'devise','1.1.2'
 # Bundle the extra gems:
 # gem 'bj'
 # gem 'nokogiri'
+  
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
 

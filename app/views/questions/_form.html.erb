@@ -1,4 +1,10 @@
-<html><body bgcolor ="silver">
+<html>
+<head>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'627116c9-1667-4d32-a4d7-1361bbb7d6d3'});</script>
+
+</head>
+<body bgcolor ="silver">
+<span class="st_twitter_large" displayText="Tweet"></span><span class="st_facebook_large" displayText="Facebook"></span><span class="st_ybuzz_large" displayText="Yahoo! Buzz"></span><span class="st_gbuzz_large" displayText="Google Buzz"></span><span class="st_email_large" displayText="Email"></span><span class="st_sharethis_large" displayText="ShareThis"></span><br /><br />
 <%= form_for(@question) do |f| %>
   <% if @question.errors.any? %>
     <div id="error_explanation">
@@ -23,17 +29,20 @@
   <div class="field">
     <%= f.label :category_id %><br />
   
-      <%= f.collection_select :category_id, Category.find(:all), :id, :name %>	
+      <%= f.collection_select :category_id, Category.find(:all), :id, :name ,{},{ :onchange=>"#{remote_function(:url=>{:action=>'load_subcategories'} ,:with =>"'id='+value")}" }%>	
 
   </div>
+
+
   <div class="field">
     <%= f.label :subcategory_id %><br />
     
-  <%= f.collection_select :category_id, Subcategory.find(:all), :id, :name %><br /><br />
+  <span id='test'><%= f.collection_select :subcategory_id, Subcategory.find(:all), :id, :name %><br /><br /></span>
   </div>
   <div class="actions">
    
     <%= f.submit %>
+
   </div>
 <% end %>
 </body></html>

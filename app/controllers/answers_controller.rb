@@ -15,7 +15,8 @@ class AnswersController < ApplicationController
   def show
    # @answer = Answer.find(params[:id])
     @ques = Question.find(params[:id])
-    @answerlist = Answer.where("question_id = ?", @ques.id)
+    @answerlist = Answer.where("question_id = ?", @ques.id )
+    @answerlist= @answerlist.paginate :page => params[:page], :per_page =>2,:order=>'created_at DESC'
     
 
     #respond_to do |format|
@@ -41,12 +42,19 @@ class AnswersController < ApplicationController
   def create
     @answer = Answer.new(params[:answer])
     @answer.question_id = params[:q_id].to_i
-   
-    @answer.save
-   @answerlist = Answer.where("question_id = ?", @answer.question_id)   
-   @question = Question.find(params[:q_id])
-   puts'^^^^^^^^^^^^^^^^',@question.class  
-   
+    @answerlist = Answer.where("question_id = ?", @answer.question_id)   
+    @question = Question.find(params[:q_id]) 
+   respond_to do |format|
+    if @answer.save     
+    format.html { render :action => "create"}
+
+    else 
+        puts '*******************'
+        format.html { redirect_to :action => "new",:id => @answer.question_id }
+        format.xml  { render :xml => @answer.errors, :status => :unprocessable_entity }
+        
+      end   
+   end
   end
 
   # PUT /answers/1

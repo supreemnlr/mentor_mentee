@@ -1,0 +1,3 @@
+  
+<%= select("question", "subcategory_id", @subcat.collect {|p| [ p.name, p.id ] }, {:include_blank => 'None'})%>
+

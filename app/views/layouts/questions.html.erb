@@ -1,4 +1,10 @@
 <html>
+<head>
+  <%= javascript_include_tag :defaults,'prototype' %>
+  <%= csrf_meta_tag %>
+<style href>a {text-decoration: none} </style>
+</head>
+</html>
 <body>
 <div id = "user_nav">
   <%if user_signed_in? %>

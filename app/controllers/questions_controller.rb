@@ -25,10 +25,17 @@ layout 'questions'
   # GET /questions/new.xml
   def new
     @question = Question.new
-
+     if request.xhr?
+          
+            @subcat = Subcategory.find(:all,:conditions=>['category_id=?',params[:id]])
+            render :update do |page|
+            page.replace_html :test, :partial => 'test'
+          end
+     else
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @question }
+    end
     end
   end
 
@@ -41,8 +48,14 @@ layout 'questions'
   # POST /questions.xml
   def create
     @question = Question.new(params[:question])
-    @question.save     
-      
+   respond_to do |format|
+    if @question.save
+         format.html { render :action => "create" }    
+      else
+        format.html { render :action => "new" }
+        format.xml  { render :xml => @question.errors, :status => :unprocessable_entity }
+      end    
+      end
   end
 
   # PUT /questions/1
@@ -72,4 +85,16 @@ layout 'questions'
       format.xml  { head :ok }
     end
   end
+
+def load_subcategories
+puts "#### Category Id - #{params[:id]}"
+@subcategories = Subcategory.where(:category_id => params[:id])
+respond_to do |format|
+format.js{
+render :update do |page| 
+page[:question_subcategory_id].replace collection_select(:question,:subcategory_id, @subcategories , :id, :name)
+end
+}
+end
+end
 end

@@ -1,13 +1,15 @@
 <html>
 <body bgcolor = "silver">
 
-<img src ="/images/discuss.jpg" width="100%" height="180px" align = "top"/>
+<img src ="/images/discuss.jpg" width="100%" height="100px" align = "top"/>
 <h1> Questions </h1>
 <% @ques = Question.find(:all)%>
 
 <% @ques.each do |questions| %>
-<% puts "&&&&&&&&&&&&&&&&",questions.id %>
   <h5><%=  link_to questions.name ,:controller => 'questions',:action => 'show' ,:id => questions.id%></h5>
+   <% @count = Answer.where(:question_id => questions.id) %>   
+ <h6> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; in <%= link_to Category.find(questions.category_id).name unless questions.category_id.blank?%> &nbsp; &nbsp; &nbsp; Answers(<%=  @count.count %>) &nbsp; &nbsp; &nbsp; Posted <%= time_ago_in_words(questions.created_at) %> ago</h6>
+
 <%end%>
 <%= yield%>
 </h>

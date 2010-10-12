@@ -1,6 +1,8 @@
 MentorMentee::Application.routes.draw do
-  #resources :answers
-  resources :questions
+  resources :answers
+  resources :questions do 
+ get 'load_subcategories',:on => :collection
+end 
   namespace :admin do resources :subcategories end
 
   namespace :admin do resources :categories end

@@ -1,5 +1,6 @@
-<html>
-<%= form_for(@answer) do |f| %>
+<h1>Submit Answer</h1><br />
+
+<%= form_for(Answer.new,:url=>{:action=>:create}) do |f| %>
   <% if @answer.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@answer.errors.count, "error") %> prohibited this answer from being saved:</h2>
@@ -11,19 +12,16 @@
       </ul>
     </div>
   <% end %>
+  <h3> Question : <%= @ques.name %> </h3>
 
   <div class="field">
-    <%= f.label :Answer%><br />
-    <%= f.text_area :name, :rows => 10,:cols => 50 %>
+   <h3> <%= f.label :Answer%></h3>
+    <%= f.text_area :name, :rows => 10,:cols => 60 %>
   </div>
-<!--
-  <div class="field">
-    <%= f.label :question_id %><br />
-    <%= f.text_field :question_id %>
-  </div>
--->
   <div class="actions">
+<%=hidden_field_tag 'q_id',params[:id] %>
     <%= f.submit %>
   </div>
 <% end %>
-</html>
+
+

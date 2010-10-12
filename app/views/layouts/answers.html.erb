@@ -1,17 +1,12 @@
 <html>
+<head>
+<style href>a {text-decoration: none} </style>
+</head>
 <body bgcolor ="silver">
-<div id = "user_nav">
-  <%if user_signed_in? %>
-     <p align = right >Hello, <%= current_user.email %> |
-    <%= link_to "Sign_out",destroy_user_session_path %></p>
-  <% else %>
-  <p align = right>  <%= link_to "Sign_up", new_user_registration_path %> or
-    <%= link_to "Sign_in", new_user_session_path %></p>
-  <% end %>
-</div>
+
 <p ALIGN="center">
 <h align ="left">
 <%= yield%>
 </p>
 </body>
-</html> 
+</html>     

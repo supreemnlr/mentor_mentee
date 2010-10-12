@@ -1,0 +1,6 @@
+   page.insert_html :top, :answers, :partial => @post  
+  <p>Posted <%= time_ago_in_words(ans.created_at) %> ago</p> 
+
+
+page.insert_html :top, :posts, :partial => @post  
+   page[@post].visual_effect :highlight  
