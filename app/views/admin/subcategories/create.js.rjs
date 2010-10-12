@@ -1,0 +1,13 @@
+if @subcategory.valid? 
+page.insert_html :bottom,'subcat',"<ul><tr id='cat_#{@subcategory.id}' ><td><li>#{@subcategory.category.name}</li></td>
+    <td>#{@subcategory.name}</td>
+    <td></td>
+    <td></td></tr></ul>"
+page["cat_#{@subcategory.id}"].visual_effect :highlight
+page.hide 'form'
+else
+page.insert_html :bottom,'cat',"ERRORR        in Form"
+end 
+
+
+

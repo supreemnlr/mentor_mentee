@@ -1,0 +1,17 @@
+<%= form_for([:admin,Subcategory.new], :remote=> true) do |f| %>
+
+
+  <div class="field"><br /><br />
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%= f.label :category_id %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= f.collection_select :category_id, Category.find(:all), :id, :name %><br />
+  </div><br />
+  <div class="field">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= f.label :subcategory %>
+    <%= f.text_field :name %><br/>
+<br/>
+
+  </div>
+  <div class="actions">
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%= f.submit %>
+  </div>
+<% end %>

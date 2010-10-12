@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- START:jit -->
+<html>
+<head>
+  <title>Mentor-Mentee-Admin</title>
+	<%= stylesheet_link_tag 'admin_screen',:media => "all" %>
+        <%= javascript_include_tag :defaults %>
+
+</head>
+<!-- END:jit -->
+<body id="store">
+  <%=render :partial=>'admin/header'%>
+    <div id="tabs">
+        <ul>
+           <%= link_to 'Dashboard',%>
+	   <%= link_to 'Manage Accounts',%>
+	   <%= link_to 'Category', admin_categories_path%>
+	   <%= link_to 'Subcategory',admin_subcategories_path%>
+        </ul>
+    </div>
+  
+	<!--START FLASH -->
+	<div id="flash" style="display: none;"></div>
+	
+	<!-- END FLASH -->
+	
+	<table class="tabbed" height="100%" width="100%" cellspacing="0" cellpadding="0">
+		<tr>
+						<!-- Start SIDE BAR -->
+          <td id="sidebar" class="sidebar" valign="top"> 
+		  <div class="panel" id="recently">
+            <div class="caption">Snapshot</div>
+			<li class="">
+            
+		  <!-- END SIDE BAR-->
+          <td id="main" class="main" valign="top">
+			 <div class="title">
+              <span>Dash board</span>
+              <img alt="Loading" id="loading" src="/images/loading.gif" style="display: none;" width="16" height="16"/>
+             </div> 
+			  	<%=render :partial=>'admin/import_flash'%>		
+          	<%=yield%>
+          </td>
+        </tr>
+	</table>
+	<%=render :partial=>'admin/footer'%>
+</body>
+</html>

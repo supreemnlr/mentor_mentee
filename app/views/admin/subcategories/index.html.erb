@@ -1,29 +1,54 @@
-<h1>Listing subcategories</h1>
+ <%= stylesheet_link_tag 'saveedit',:media => "all" %>	
+<img src="/images/Listingsubcategories.gif" border="0"/>
 
-<table>
+<table id='subcat'>
   <tr>
    
     <th>Category</th>
-    <th>Name</th>
+    <th>Subcategory</th>
     <th></th>
     <th></th>
   </tr>
-
+  <ul>
 <% @subcategories.each do |subcategory| %>
   <tr>
   
     
-   
-    <td><%= subcategory.category.name %></td>
-    <td><%= subcategory.name %></td>
-    <td><%= link_to 'Show',:action=> 'show', :id => subcategory.id  %></td>
-    <td><%= link_to 'Edit', edit_admin_subcategory_path(subcategory) %></td>
-    <td><%= link_to 'Destroy',admin_subcategory_path(subcategory) , :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  
+   <td> <li> <%= subcategory.category.name %></li></td>
+   <td><%= subcategory.name %></td>
+<td>   
+<ul id="css3menu" class="topmenu">
+	<li class="topfirst"><%= link_to 'Show', {:action=> 'show', :id => subcategory.id } %> </li>
+	<li class="topmenu"><%= link_to 'Edit', edit_admin_subcategory_path(subcategory) %> </li>
+	<li class="toplast"><%= link_to 'Destroy', admin_subcategory_path(subcategory) , :confirm => 'Are you sure?', :method => :delete  %> </li>
+
+</ul></td>
+
+<!--	<li class="topfirst"><a href="#" title="Save">Save</a></li>    
+	<li class="topmenu"><a href="#" title="Edit">Edit</a></li>
+	<li class="toplast"><a href="#03" title="Destroy">Destroy</a></li>    -->
+
+
+
+<!--    <td><%= link_to image_tag("/images/show.gif", :border=>0),{:action=> 'show', :id => subcategory.id } %></td>
+    <td><%= link_to  image_tag("/images/edit.gif", :border=>0), edit_admin_subcategory_path(subcategory) %></td>
+    <td><%= link_to  image_tag("/images/destroy.gif", :border=>0),admin_subcategory_path(subcategory) , :confirm => 'Are you sure?', :method => :delete %></td> -->
+
+  </ul>
+</tr>
 <% end %>
 
 </table>
 
 <br />
 
-<%= link_to 'New Subcategory', new_admin_subcategory_path %>
+<!--  <%= link_to 'New Subcategory', new_admin_subcategory_path %>  -->
+
+<a href="#" onclick="Effect.toggle('form','blind');"><img src="/images/newsubcat.gif" border="0"/></a>
+<div id="form" style="background-color:#4CC552;display:none;">
+<%=render :partial=>'formduplicat'%><br/>
+<br/>
+
+</div>
+

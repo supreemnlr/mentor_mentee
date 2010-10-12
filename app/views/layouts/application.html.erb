@@ -1,30 +1,93 @@
 <!DOCTYPE html>
-<div id = "user_nav">
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <%= csrf_meta_tag %>
+
+	<title>Mentor-Mentee</title>
+  <%= stylesheet_link_tag 'base', 'layout', 'design','menu','form', :media => :all %>
+<style type="text/css">
+a { text-decoration:none } 
+</style>
+
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'627116c9-1667-4d32-a4d7-1361bbb7d6d3'});</script>
+
+
+
+  <!--[if lte IE 8]><script type="text/javascript" src="javascripts/selectivizr.js"></script><![endif]-->
+
+  <%= yield :head %>
+</head>
+<body<%= yield :body_attributes %>>
+
+	<div id="container">
+		<header>
+
+			<h1><a href="/">Mentor-Mentee Answers</a></h1>
+			<nav id="primary">
+				<ul>
+				
+        
+<ul id="css3menu" class="topmenu">
+	<li class="topmenu"><%= link_to "Home", root_path %> &nbsp&nbsp</a></li>
+	<li class="topmenu"><%= link_to "Browse Categories", :controller => "credentials", :action => 'category' %></a>
+
+
+	</li>
+	<li class="topmenu"> <%= link_to "My Profile", :controller => "credentials", :action => 'myprofile' %> </li>
+<!--	<li class="topmenu"><%= link_to "Faculty Activity",:controller => "credentials",:action => 'faculty'%>  </li>   -->
+	<li class="topmenu"><%= link_to "Study Material",:controller => "credentials",:action => 'studymat'%></li>
+	<li class="topmenu"><%= link_to "Careers",:controller => "credentials", :action => 'career'%> </li>
+	<li class="topmenu"><%= link_to "ContactUs",:controller => "credentials",:action => 'contactus'%></li>
+</ul>
+	       			</ul>
+			</nav>
+			<nav id="supp">
+				<ul>
+
+
+	<div id = "user_nav">
+
   <%if user_signed_in? %>
      <p align = right >Hello, <%= current_user.email %> |
     <%= link_to "Sign_out",destroy_user_session_path %></p>
   <% else %>
-  <p align = right>  <%= link_to "Sign_up", new_user_registration_path %> or
-   <%= link_to "Sign_in", new_user_session_path %></p>
-   <p align = 'right'><a href="#" onclick="Effect.toggle('login','blind');"><b>Login</b></a></p>
-   <div id="login" style="background-color:black;display:none;">
-    <%= render :partial => 'devise/sessions/login' %>
+  <p align = right>  <%= link_to "Login", new_user_session_path %>&nbsp;&nbsp; <%= link_to "Register", new_user_registration_path %> 
+   </p>
   <% end %>
 </div>
-<html>
-<head>
-  <title>MentorMentee</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
-<h1> Mentor-Mentee </h1>
+				</ul>
+			</nav>
+		</header>
+	
+		<section id="main" class="clearfix">
+    
+			<% if flash[:notice] %><p class="notice"><%= flash[:notice] %></p><% end %>
+	    <% if flash[:alert] %><p class="error">  <%= flash[:alert] %> </p><% end %>
 
-<%= link_to "Student Corner", :controller => "credentials", :action => 'index' %> | <%= link_to "Faculty_corner",:controller => "credentials",:action => 'faculty'%> | <%= link_to "Packages",:controller => "credentials",:action => 'packages'%> | <%= link_to "Categories", :controller => "admin/categories" %> |  <%= link_to "Subcategories", :controller => "admin/subcategories" %> | <%= link_to "AboutUs",:controller => "credentials", :action => 'new' %> | <%= link_to "Study Material",:controller => "credentials",:action => 'stud_mat'%> | <%= link_to "Careers",:controller => "credentials", :action => 'career'%> | <%= link_to "ContactUs",:controller => "credentials",:action => 'contact'%>
-</head>
-<body bgcolor = "pink">
-<center>
+	    <%= yield %>
+		</section>
+	
+		<footer>
+			<nav>
+				<h3>Pages</h3>
+				<ul>
+				  <li><%= link_to "Home", "http://#{@domain}" %></li>
+					<li><a href="#">About Us</a></li>
+				
+					<li><a href="#">General Terms</a></li>
+					<li><a href="#">Feedback</a></li>
+					<li><a href="#">FAQs</a></li>
+					<li><a href="#">Contact Us</a></li>
+				</ul>
+			</nav>
 
-<%= yield %>
-</center>
+		
+		
+			<p id="copyright">Copyright &copy; </p>
+		</footer>
+	</div>
 </body>
 </html>

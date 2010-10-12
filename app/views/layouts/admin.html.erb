@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>Mentor Mentee-Admin-<%=controller_name.titleize%></title>
+      
+ <%= javascript_include_tag 'prototype','effects','busy_ajax','facebox','jquery.min','jquery.tablesorter.min','jquery.metadata' %> 
+		  <%= stylesheet_link_tag "admin_screen", 'facebox','tablesorter','hover_tooltip',:media => "all" %>		  
+	 <script type="text/javascript">
+	$.noConflict();
+  jQuery(document).ready(function($) { 
+    // extend the default setting to always include the zebra widget. 
+    $.tablesorter.defaults.widgets = ['zebra']; 
+    // extend the default setting to always sort on the first column 
+ //  $.tablesorter.defaults.sortList = [[1,1]]; 
+    // call the tablesorter plugin 
+    $("table").tablesorter(); 		
+}); 
+</script>
+ </head>
+<body id="store">
+<%=render :partial=>'admin/header' %>
+<div id="tabs"><ul><%=admin_tabs %></ul></div>
+<table class="tabbed" height="100%" width="100%" cellspacing="0" cellpadding="0">
+    <tr>
+        <!-- Start: SIDE BAR -->
+        <td id="sidebar" class="sidebar" valign="top">
+            <div class="filters">
+                <%= search_form %>
+                <div id="snapshot">
+                    <%=render :partial=>'snapshot' %>
+                </div>
+            </div>
+            <%=recent_items %><!-- Recent Publishers limit=>10 order=>'created_by DESC' -->
+        </td>
+        <!-- END: SIDE BAR -->
+        <td id='main' class='main' valign='top'>
+            <%=admin_sub_menu %>
+            <%=main_content %>
+            <%=render :partial=>'admin/import_flash' %>
+            <%=yield %>
+        </td>
+    </tr>
+</table>
+<%=render :partial=>'admin/footer' %>
+
+</body>
+</html>

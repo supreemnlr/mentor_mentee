@@ -1,6 +1,6 @@
-<h1>Listing categories</h1>
+<img src="/images/Listingcategories.gif" border="0"/>
 
-<table>
+<table id='cat'>
   <tr>
     <th><h3>Categories</h3></th>
     <th></th>
@@ -25,4 +25,10 @@
 
 <br />
 
-<%= link_to 'New Category', new_admin_category_path %>
+<!--   <%= link_to 'New Category', new_admin_category_path %>   -->
+
+<a href="#" onclick="Effect.toggle('form','blind');" ><img src="/images/newcat.gif" border="0"/></a><br />
+<div id="form" style="background-color:#4CC552;display:none;"><br />
+<%=render :partial=>'formduplicate'%><br /><br />
+</div>
+

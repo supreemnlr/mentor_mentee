@@ -1,0 +1,10 @@
+.formbg, .formbg TD
+{
+background-image:url('/images/b1.png');
+background-color:#D0D8A7;
+color:Black;
+font-family:verdana;
+font-weight:NORMAL;
+list-style: NONE;
+}
+

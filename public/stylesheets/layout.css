@@ -1,0 +1,364 @@
+/* @group layout */
+
+html{
+	background-color: #444;
+}
+
+div#container {
+	background-color: #fff;
+	display: block;
+	margin: 0 auto 40px auto;
+	width: 960px;
+	padding: 100px 10px 260px 10px;
+	min-height: 600px;
+	position: relative;
+}
+
+/* @group header */
+
+header{
+	background-color: #eee;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 100px;
+}
+
+header h1{
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
+
+header h1 a{
+	display: block;
+	font-weight: normal;
+	padding: 0 30px;
+	line-height: 74px;
+	margin: 0;
+	text-decoration: none;
+}
+
+header nav{
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ddd;
+	line-height: 24px;
+}
+
+header nav ul {
+	margin: 0;
+	padding: 0;
+	display: block;
+}
+
+header nav ul li{
+	display: inline;
+	list-style-type: none;
+}
+
+nav ul li a{
+	text-decoration: none;
+	padding: 0 10px;
+}
+
+header nav#supp{
+	display: block;
+	position: absolute;
+	left: auto;
+	top: 0;
+	height: 30px;
+	padding: 4px;
+	background-color: transparent;
+}
+
+/* @end */
+
+/* @group footer */
+
+footer{
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 200px;
+	background-color: #eee;
+	padding: 20px;
+}
+
+footer nav{
+	display: block;
+	width: 200px;
+	float: left;
+}
+
+footer nav ul{
+	margin: 0 20px;
+}
+
+footer nav h3{
+	margin: 20px 0 0 0;
+}
+
+p#copyright {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -40px;
+	text-align: center;
+	color: #999;
+}
+
+/* @end */
+
+
+
+/* @end */
+
+/* @group forms */
+
+/* @group boilerplate forms */
+fieldset { padding: 1.4em; margin: 0 0 1.5em 0; border: 1px solid #ddd; }
+legend { padding: 0 .4em; font-size: 20px;
+	color: #5b5b58;
+}
+textarea { padding: .4em; }
+form p { margin: 0 0 .5em; }
+form p label { float: left; width: 180px; text-align: right; margin-right: 4px; line-height: 22px;}
+
+form p input { width: 200px; }
+form p select { width: 200px; }
+form p.date select { width: auto; }
+form p.radio input{ width:  auto; margin: 0 4px 0 10px;}
+form p.radio label.collection_radio{
+	float: none;
+	width: auto;
+}
+
+form p input.button { width: auto; }
+form p.check_box input { width: auto; }
+form span.radio_button input { width: auto; }
+
+/*form p.boolean, form p.check_box, form p.check_boxes { margin-left: 164px; }*/
+form span.radio_button { margin: 0 20px 0 0; }
+/*form p.boolean label,
+form p.check_box label,
+form p.check_boxes label,
+form span.radio_button label { float: none; }*/
+form p.boolean input,
+form p.check_box input,
+form p.check_boxes input,
+form span.radio_button input { width: auto; }
+
+
+
+/* @end */
+
+form p{
+	line-height: 25px;
+	clear: both;
+	margin: 2px 0;
+}
+
+form p label {
+	display: block;
+	float: left;
+	width: 240px;
+	text-align: right;
+	padding: 1px 5px;
+}
+
+form p input[type=text],
+form p input[type=password],
+form p input[type=search],
+form p input[type=number],
+form p input[type=range],
+form p input[type=color],
+form p input[type=tel],
+form p input[type=url],
+form p input[type=email],
+form p input[type=date],
+form p input[type=time],
+form p input[type=month],
+form p input[type=week],
+form p input[type=datetime],
+form p select {
+	width: 200px;
+	padding: 3px 5px;
+	border: solid 1px #ccc;
+}
+
+textarea{
+	width:  190px;
+	padding: 5px;
+}
+
+
+p.actions a,
+p.actions input,
+p.submit a,
+p.submit input,
+form input.submit {
+	margin: 10px 0;
+	text-align: center;
+	line-height: 20px;
+	text-decoration: none;
+	color: #fff;
+	padding: 4px 10px;
+
+	background: #999;
+	
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	border: none;
+}
+
+p.actions a.submit,
+p.actions input,
+p.submit a.submit,
+p.submit input,
+form input.submit{ 
+	background-color: #5b5b58;
+	padding: 2px 40px;
+	width: auto;
+	margin: 0;
+	float: right;
+}
+
+p.actions a,
+p.submit a{ float: left; margin: 0 6px; }
+
+/* @group errors & hints */
+
+form p.errors{ 
+	margin: 20px;
+ 	padding: 4px 10px;
+ 	border: solid 1px #f00;
+ 	color: #f00;
+ 	background-color: #fdd;
+}
+
+form span.error,
+page form div.error p.errors,
+form span.hint{
+	color: #fff;
+	margin: 0 0 0 10px;
+	padding: 2px 10px 2px 20px;
+	background: url(../images/base/arrow_hint.png) no-repeat left center;
+	
+	-webkit-border-top-right-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	-moz-border-radius-topright: 10px;
+	-moz-border-radius-bottomright: 10px;
+}
+
+form span.error,
+form div.error p.errors{ 
+	background-image: url(../images/base/arrow_error.png); 
+} 
+
+
+form p.error span.hint{display: none;}
+
+form div.error p.errors{margin: 0 0 0 38px;}
+form p.date span.error,
+form p.date span.hint {	margin: 0 0 0 8px;}
+form span.error ~ span.error,
+form span.error ~ span.hint,
+form span.error span.errors {display: none;}
+
+/* @end */
+
+
+/* @end */
+
+/* @group Tables */
+
+table{ 
+	margin-bottom: 10px; 
+}
+
+table,
+table tr,
+table th,
+table td{ 
+	border: none; 
+}
+
+table thead th{ 
+	border-top: solid 2px #000;
+	text-align: left;
+}
+
+table tbody tr:nth-child(odd){ 
+	 background-color: #eee;
+	 background-color: rgba(0,0,0,0.1);
+}
+
+/* @end */
+
+.clear {
+	clear: both;
+	width: 100%;
+	height: 1px;
+	background: transparent;
+}
+
+/* @group radio */
+
+form p.radio input{
+	display: none;
+}
+
+form p.radio label.radio{
+	width: 80px;
+}
+
+form p.radio label.collection_radio{
+	display: block;
+	float: left;
+	width: auto;
+	text-align: center;
+	font-size: 12px;
+	font-weight: normal;
+	margin: 0;
+	padding: 0 6px;
+	background-color: #444;
+	border-left: solid 1px #aaa;
+	cursor: pointer;
+	color: #fff;
+}
+
+form p.radio label.collection_radio:hover,
+form p.radio label.selected{
+	background-color: #a90000;
+}
+
+form p.radio label.first{
+-webkit-border-top-left-radius: 6px;
+-webkit-border-bottom-left-radius: 6px;
+-moz-border-radius-topleft: 6px;
+-moz-border-radius-bottomleft: 6px;
+border-top-left-radius: 6px;
+border-bottom-left-radius: 6px;
+border-left: none;
+}
+
+form p.radio label.last{
+-webkit-border-top-right-radius: 6px;
+-webkit-border-bottom-right-radius: 6px;
+-moz-border-radius-topright: 6px;
+-moz-border-radius-bottomright: 6px;
+border-top-right-radius: 6px;
+border-bottom-right-radius: 6px;
+}
+
+
+
+/* @end */

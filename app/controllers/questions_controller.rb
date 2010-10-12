@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-layout 'questions'
+layout 'application'
   # GET /questions
   # GET /questions.xml
   def index
