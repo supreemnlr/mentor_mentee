@@ -19,4 +19,7 @@ class CredentialsController < ApplicationController
 
  def faculty
  end
+
+#def show
+#end
 end

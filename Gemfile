@@ -12,6 +12,9 @@ gem 'devise','1.1.2'
 gem 'ajaxful_rating'
 gem 'will_paginate'
 
+gem "cancan"
+
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
