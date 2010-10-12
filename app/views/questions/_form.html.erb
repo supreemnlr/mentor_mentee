@@ -37,7 +37,11 @@
   <div class="field">
     <%= f.label :subcategory_id %><br />
     
+<<<<<<< HEAD
   <span id='test'><%= f.collection_select :subcategory_id, Subcategory.find(:all), :id, :name %><br /><br /></span>
+=======
+  <%= f.collection_select :subcategory_id, Subcategory.find(:all), :id, :name %><br /><br />
+>>>>>>> 902e3766cf49a1d370adab645075f23243d026b5
   </div>
   <div class="actions">
    

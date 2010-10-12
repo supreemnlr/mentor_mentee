@@ -1,0 +1,11 @@
+<%= form_for([:admin,Category.new], :remote=> true) do |f| %>
+ 
+
+  <div class="field"><br /><br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= f.label :Category %>
+    &nbsp;&nbsp;<%= f.text_field :name %> 
+  </div><br/><br />
+  <div class="actions">
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%= f.submit %>
+  </div>
+<% end %>

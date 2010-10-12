@@ -1,17 +1,28 @@
+ <%= stylesheet_link_tag 'saveedit',:media => "all" %>	
 <p id="notice"><%= notice %></p>
-<body bgcolor="cyan"></body>
-<p>
-  <b><h3>Category: </h3></b>
-  <%= @category.name %>
-</p>
-<ul>
-<h3> Subcategories: </h3>
-<%@category.subcategories.each do |s|%>
-   <li><%= s.name%></li>
-<%end%>
-</ul>
 
-<%= link_to 'Edit', edit_admin_category_path(@admin_category) %> |
-<%= link_to 'Back', admin_categories_path %>
-<%= link_to 'Destroy', @admin_category, :confirm => 'Are you sure?', :method => :delete %></td>   
+<p>
+  <b><h3>Category: </h3></b><br/>
+  <%= @category.name %>
+</p><br/>
+<ul> 
+<h3> Subcategories: </h3><br/>
+
+<%@category.subcategories.each do |s|%>
+  <li><%= s.name%></li></ul>
+<%end%>
+<br/>
+
+<ul id="css3menu" class="topmenu">
+	<li class="topfirst"><%= link_to 'Edit',  edit_admin_category_path(@category) %> </li>
+	<li class="topmenu"><%= link_to 'Back', admin_categories_path %> </li>
+	<li class="toplast"><%= link_to 'Destroy',  @admin_category, :confirm => 'Are you sure?', :method => :delete  %> </li>
+
+</ul></td>
+
+
+<!--    	<%= link_to image_tag("/images/edit.gif", :border=>0), edit_admin_category_path(@category) %> 
+		<%= link_to image_tag("/images/back.gif", :border=>0), admin_categories_path %> 
+		<%= link_to image_tag("/images/destroy.gif", :border=>0), @admin_category, :confirm => 'Are you sure?', :method => :delete %></td>   
+-->
  

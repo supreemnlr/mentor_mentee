@@ -9,12 +9,19 @@ end
 
   namespace :admin do resources :categories end
 
-  get "credentials/index"
+  namespace :admin do resources :home
+	get "accounts"
+  end
 
+ 	get "credentials/category"
+	get "credentials/myprofile"
+	get "credentials/studymat"
+	get "credentials/career"
+	get "credentials/contactus"
   devise_for :users, :path_names => { :sign_up => "register" } 
 
   
-   devise_scope :user do
+   devise_scope :user do 
 
   #get "register"  => "devise/registrations#new" 
  # get "login"  => "devise/sessions#new"    

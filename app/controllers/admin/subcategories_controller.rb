@@ -1,4 +1,5 @@
 class Admin::SubcategoriesController < ApplicationController
+layout 'admin/dashboard'
   # GET /admin/subcategories
   # GET /admin/subcategories.xml
   def index
@@ -43,7 +44,9 @@ class Admin::SubcategoriesController < ApplicationController
 
     respond_to do |format|
       if @subcategory.save
-        format.html { redirect_to([:admin,@subcategory], :notice => 'Subcategory was successfully created.') }
+	flash[:notice] = 'Subcategory was successfully created.'
+        format.html { redirect_to([:admin,@subcategory]) }
+	format.js
         format.xml  { render :xml => @subcategory, :status => :created, :location => @subcategory }
       else
         format.html { render :action => "new" }

@@ -1,0 +1,178 @@
+/* @group header */
+
+html{
+	background: #444 url(/images/bg1.png) repeat;
+}
+
+div#container{
+	padding-top: 130px;
+}
+
+header {
+	height: 150px;
+	background-color: transparent;
+}
+
+header h1 a{
+	height: 150px;
+	text-indent: -1000em;
+	background: url(/images/logo.png) no-repeat 10px top;
+}
+
+/* @group nav */
+
+header nav#primary{
+	left: 10px;
+	right: 10px;
+	background-color: #444;
+	line-height: 10px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+	border-radius: 4px;
+	behavior: url(/stylesheets/PIE.htc);
+}
+
+header nav#primary a{
+	display: block;
+	float: left;
+	color: #fff;
+	border-right: solid 1px #666;
+	line-height: 32px;
+}
+
+header nav#primary li.home a{
+	-webkit-border-top-left-radius: 4px;
+	-webkit-border-bottom-left-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	behavior: url(/stylesheets/PIE.htc);
+}
+
+header nav#primary li.shopping_cart a{
+	float: right;
+	padding-left: 33px;
+	border-right: none;
+	border-left: solid 1px #666;
+
+	-webkit-border-top-right-radius: 4px;
+	-webkit-border-bottom-right-radius: 4px;
+	-moz-border-radius-topright: 4px;
+	-moz-border-radius-bottomright: 4px;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	behavior: url(/stylesheets/PIE.htc);
+	background: transparent url(/images/icons_white.png) no-repeat -33px -943px;
+}
+
+header nav#primary li.shopping_cart a:hover,
+header nav#primary a:hover,
+header nav#primary li.selected a{
+	background-color: #a90000;
+}
+
+header nav#supp{right: 10px;}
+header nav#supp a{ color: #444;}
+
+/* @end */
+
+/* @group home */
+
+/* @group section#showcase */
+
+section#show_case{
+	display: block;
+	width: 100%;
+	position: relative;
+	margin: 0;
+}
+
+
+
+/* @end */
+
+/* @group testimonials */
+
+ul#testimonials {
+	display: block;
+	height: 230px;
+	width: 120px;
+	padding: 10px;
+	margin: 0 10px 10px 0;
+	background-color: #eee;
+	float: left;
+}
+
+ul#testimonials li{
+	list-style-type: none;
+}
+
+
+
+/* @end */
+
+/* @group contact_form */
+
+div#contact_form {
+	display: block;
+	height: 250px;
+	width: 260px;
+	margin: 0 10px 10px 0;
+	/*background-color: #eee;*/
+	float: left;
+}
+
+div#contact_form fieldset{
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+div#contact_form fieldset p{
+	border: solid 1px #ccc;
+	padding: 0;
+}
+
+div#contact_form fieldset p.submit{
+	border: none;
+}
+
+div#contact_form fieldset p.submit input{
+	width: auto;
+	padding: 3px 8px;
+}
+
+div#contact_form fieldset p input[type=file]{
+	border: none;
+}
+
+div#contact_form fieldset input{
+	border: none;
+	width: 180px;
+	margin: 0 0 2px 0;
+}
+
+div#contact_form fieldset textarea{
+	border: none;
+	width: 170px;
+}
+
+div#contact_form p.intro{
+	font-style: italic;
+	font-size: 12px;
+	line-height: 14px;
+}
+
+div#contact_form fieldset p label{
+	/*float: none;
+	display: inline;*/
+	width: auto;
+	text-align: left;
+	padding: 0 0 0 4px;
+}
+
+
+
+

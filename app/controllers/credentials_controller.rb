@@ -1,25 +1,50 @@
 class CredentialsController < ApplicationController
+
   def index
+   @questions = Question.all
+
+     respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @questions }
+    end
   end
   
-  def new
-  end
+ def new
+ end
   
- def contact
+ def contactus
  end
 
  def career
  end
 
- def stud_mat
+ def myprofile
+
+
  end
 
- def packages
+ def studymat
+
  end
 
- def faculty
+ def category
+ @categories = Category.all
+
+    respond_to do |format|
+      format.html 
+	format.js
+      format.xml  { render :xml => @categories }
+    end
+
  end
 
-#def show
-#end
+def show
+    @category = Category.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+format.js
+      format.xml  { render :xml => @category }
+    end
+  end
 end

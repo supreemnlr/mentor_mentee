@@ -1,0 +1,13 @@
+if @category.valid? 
+page.insert_html :bottom,'cat',"<ul><tr id='cat_#{@category.id}' ><td><li>#{@category.name}</li></td>
+    <td></td>
+    <td></td>
+    <td></td></tr></ul>"
+page["cat_#{@category.id}"].visual_effect :highlight
+page.hide 'form'
+else
+page.insert_html :bottom,'cat',"ERRORR        in Form"
+end 
+
+
+

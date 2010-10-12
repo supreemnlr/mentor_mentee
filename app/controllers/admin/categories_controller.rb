@@ -1,4 +1,5 @@
 class Admin::CategoriesController < ApplicationController
+layout 'admin/dashboard'
   # GET /admin/categories
   # GET /admin/categories.xml
   def index
@@ -44,10 +45,14 @@ class Admin::CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to([:admin,@category], :notice => 'Category was successfully created.') }
+	flash[:notice] = 'Category was successfully created.'
+       
+        format.html { redirect_to([:admin,@category]) }
+	 format.js
         format.xml  { render :xml => [:admin,@category], :status => :created, :location => @category }
       else
         format.html { render :action => "new" }
+	format.js
         format.xml  { render :xml => @category.errors, :status => :unprocessable_entity }
       end
     end

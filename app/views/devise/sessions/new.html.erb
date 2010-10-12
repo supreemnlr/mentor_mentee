@@ -1,12 +1,22 @@
-<h2>Sign in</h2>
+<center>
+<table CLASS="formbg" >
+<br/><br/><br/><tr><td><h1>&nbsp;&nbsp;Login</h1></td></tr>
 
+<tr>
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <tr><td><%= f.label :email %><br/>
+  <%= f.text_field :email %></td></tr>
 
+  <tr><td><%= f.label :password %><br/>
+  <%= f.password_field :password %></td></tr>
 
-<%= puts 'haiiiiiiiiiiiiiiiii'%>
- <%= form_tag login_index_path %>
-<p>Email : <%= text_field :user, :email %><P>
-<p>Password : <%= password_field :user, :password %><P>
+  <tr> <% if devise_mapping.rememberable? -%>
+ <td><%= f.check_box :remember_me %> <%= f.label :remember_me %></td></tr>
+  <% end -%>
 
-<%= submit_tag "Login"%>
-<%= form_tag%>	
-<%= render :partial => "devise/shared/links" %>
+  <tr><td><%= f.submit "Sign in" %><br/><br/></td></tr>
+<% end %>
+
+<tr><td><%= render :partial => "devise/shared/links" %></td></tr>
+</center>
+</table >

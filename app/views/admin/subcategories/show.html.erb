@@ -1,15 +1,22 @@
+ <%= stylesheet_link_tag 'saveedit',:media => "all" %>	
 <p id="notice"><%= notice %></p>
-
-<p>
+<br /><br /><br />
+<p>&nbsp;&nbsp;
   <b>Category:</b>
-  <%= @subcategory.category_id %>
+   <%= @subcategory.category.name %>
 </p>
 
-<p>
-  <b>Name:</b>
-  <%= @subcategory.name %>
-</p>
+<p>&nbsp;&nbsp;
+  <b>Subcategory:</b>
+  <%= @subcategory.name %><br />
+</p><br />
+
+<ul id="css3menu" class="topmenu">
+	<li class="topfirst"><%= link_to 'Edit', edit_admin_subcategory_path(@admin_subcategory) %> </li>
+	<li class="topmenu"><%= link_to 'Back', admin_subcategories_path %> </li>
+	
+</ul></td>
 
 
-<%= link_to 'Edit', edit_admin_subcategory_path(@admin_subcategory) %> |
-<%= link_to 'Back', admin_subcategories_path %>
+<!--    <%= link_to image_tag("/images/edit.gif", :border=>0), edit_admin_subcategory_path(@admin_subcategory) %> 
+<%= link_to image_tag("/images/back.gif", :border=>0), admin_subcategories_path %>     -->

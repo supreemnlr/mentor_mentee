@@ -1,6 +1,14 @@
+ <%= stylesheet_link_tag 'saveedit',:media => "all" %>	
 <h1>Editing category</h1>
 
-<%= render 'form' %>
+<%= render 'form' %><br/>
 
+
+
+<ul id="css3menu" class="topmenu">
+	
+	<li class="topfirst"><%= link_to 'Back', admin_categories_path %> </li>
+	
+</ul></td>
 <!--   <%= link_to 'Show', @admin_category %> |    -->
-<%= link_to 'Back', admin_categories_path %>
+<%= link_to image_tag("/images/back.gif", :border=>0), admin_categories_path %>   -->
