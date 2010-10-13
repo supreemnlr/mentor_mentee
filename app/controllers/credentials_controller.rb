@@ -37,13 +37,20 @@ class CredentialsController < ApplicationController
     end
 
  end
+ 
+ 
+def question
+@ques = Question.where("subcategory_id =?",params[:id])
+
+end
+
 
 def show
     @category = Category.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-format.js
+
       format.xml  { render :xml => @category }
     end
   end

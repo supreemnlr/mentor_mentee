@@ -1,11 +1,10 @@
-<html>
-<body >
+
 <p id="notice"><%= notice %></p>
  
 
 <p>
   
-<h2> <b>Question:</b> <%= @question.name %></h2>
+<h2> <b><br/><br/>Question:</b> <%= @question.name %></h2>
 <br /> <br />
 <%= link_to "Answer This Question" ,:controller => 'answers',:action =>'new',:id => @question.id%>
 </p>
@@ -15,5 +14,3 @@
      Posted <%= time_ago_in_words(answer.created_at) %> ago
 <% end%>
 
-</body>
-</html>

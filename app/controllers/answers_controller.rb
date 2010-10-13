@@ -17,7 +17,7 @@ layout 'application'
    # @answer = Answer.find(params[:id])
     @ques = Question.find(params[:id])
     @answerlist = Answer.where("question_id = ?", @ques.id )
-    @answerlist= @answerlist.paginate :page => params[:page], :per_page =>2,:order=>'created_at DESC'
+    
     
 
     #respond_to do |format|

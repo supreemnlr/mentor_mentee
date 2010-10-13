@@ -48,6 +48,7 @@ layout 'application'
   # POST /questions.xml
   def create
     @question = Question.new(params[:question])
+  
    respond_to do |format|
     if @question.save
          format.html { render :action => "create" }    
