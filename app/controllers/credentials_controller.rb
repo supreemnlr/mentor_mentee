@@ -18,10 +18,7 @@ class CredentialsController < ApplicationController
  def career
  end
 
- def myprofile
 
-
- end
 
  def studymat
 

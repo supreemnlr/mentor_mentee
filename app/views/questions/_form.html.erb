@@ -29,7 +29,7 @@
 <div class="field">
 <%= f.label :category_id %><br />
 
-<%= f.collection_select :category_id, Category.find(:all), :id, :name ,{},{ :onchange=>"#{remote_function(:url=>{:action=>'load_subcategories'} ,:with =>"'id='+value")}" }%>
+<%= f.collection_select :category_id, Category.find(:all), :id, :name ,{:prompt=> 'Select Category'},{ :onchange=>"#{remote_function(:url=>{:action=>'load_subcategories'} ,:with =>"'id='+value")}" }%>
 
 </div><br />
 

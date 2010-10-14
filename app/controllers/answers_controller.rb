@@ -1,5 +1,6 @@
 class AnswersController < ApplicationController
 layout 'application'
+prepend_before_filter :authenticate_user!
   # GET /answers
   # GET /answers.xml
   def index
@@ -45,6 +46,7 @@ layout 'application'
     @answer.question_id = params[:q_id].to_i
     @answerlist = Answer.where("question_id = ?", @answer.question_id)   
     @question = Question.find(params[:q_id]) 
+    @answer.user_id=current_user.id
    respond_to do |format|
     if @answer.save     
     format.html { render :action => "create"}

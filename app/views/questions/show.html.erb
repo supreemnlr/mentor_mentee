@@ -6,11 +6,11 @@
   
 <h2> <b><br/><br/>Question:</b> <%= @question.name %></h2>
 <br /> <br />
-<%= link_to "Answer This Question" ,:controller => 'answers',:action =>'new',:id => @question.id%>
+<%= link_to "Answer This Question" ,:controller => 'answers',:action =>'new',:id => @question.id%><br/><br/>
 </p>
 <% @answerlist.each do |answer| %>
   <tr>
-     <td> <h5><%= answer.name%> </h5></td>   
-     Posted <%= time_ago_in_words(answer.created_at) %> ago
+     <td> <h5><%= answer.name%> </h5></td> 
+     &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;Posted <%= time_ago_in_words(answer.created_at) %>  ago <br/><br/>
 <% end%>
 

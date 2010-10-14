@@ -1,5 +1,7 @@
 class QuestionsController < ApplicationController
 layout 'application'
+prepend_before_filter :authenticate_user!
+
   # GET /questions
   # GET /questions.xml
   def index
@@ -17,7 +19,7 @@ layout 'application'
   # GET /questions/1.xml
   def show
     @question = Question.find(params[:id])
-    @answerlist = Answer.where("question_id = ?", @question.id)
+    @answerlist = Answer.where("question_id = ?", @question.id )
    
   end
 
@@ -47,8 +49,8 @@ layout 'application'
   # POST /questions
   # POST /questions.xml
   def create
-    @question = Question.new(params[:question])
-  
+    @question = Question.new(params[:question] )
+    @question.user_id=current_user.id
    respond_to do |format|
     if @question.save
          format.html { render :action => "create" }    

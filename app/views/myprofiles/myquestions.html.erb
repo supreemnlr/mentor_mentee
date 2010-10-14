@@ -1,7 +1,8 @@
-<br/><br/><br/><h1><blink><%= link_to 'Post A Question', new_question_path %><blink></h1><br/>
 
-<h1>Questions </h1>
-<% @ques = Question.find(:all, :order => 'created_at DESC')%>
+
+
+<br />
+<br />
 
 <% @ques.each do |questions| %>
 
@@ -14,5 +15,4 @@
 
 
 <br />
-
 

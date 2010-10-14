@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(:version => 20101007084035) do
   create_table "answers", :force => true do |t|
     t.string   "name"
     t.integer  "question_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -29,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20101007084035) do
     t.string   "name"
     t.integer  "category_id"
     t.integer  "subcategory_id"
+    t.integer  "user_id"
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -52,8 +54,7 @@ ActiveRecord::Schema.define(:version => 20101007084035) do
     t.string   "country"
     t.string   "city"
     t.string   "phone"
-    t.string   "mentor_category"
-    t.string   "mentee_category"
+    t.string   "role"
     t.string   "picture"
     t.string   "remember_me"
     t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
@@ -71,10 +72,6 @@ ActiveRecord::Schema.define(:version => 20101007084035) do
     t.datetime "confirmation_sent_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

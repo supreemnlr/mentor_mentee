@@ -62,6 +62,7 @@ a { text-decoration:none }
 				</ul>
 			</nav>
 		</header>
+<br/><br/><br/><%= link_to 'My Questions', :controller => 'myprofiles', :action => 'myquestions', :id=>current_user.id %> | <%= link_to 'My Answers' %>	
 		<section id="main" class="clearfix">
      
 			<% if flash[:notice] %><p class="notice"><%= flash[:notice] %></p><% end %>

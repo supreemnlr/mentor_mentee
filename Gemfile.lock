@@ -28,7 +28,6 @@ GEM
       activemodel (= 3.0.0)
       activesupport (= 3.0.0)
     activesupport (3.0.0)
-    ajaxful_rating (2.2.8.2)
     arel (1.0.1)
       activesupport (~> 3.0.0)
     bcrypt-ruby (2.1.2)
@@ -80,7 +79,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  ajaxful_rating
   cancan
   devise (= 1.1.2)
   mysql
