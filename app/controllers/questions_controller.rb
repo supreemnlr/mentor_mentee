@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
 layout 'application'
+prepend_before_filter :authenticate_user!
   # GET /questions
   # GET /questions.xml
   def index
@@ -92,7 +93,7 @@ puts "#### Category Id - #{params[:id]}"
 respond_to do |format|
 format.js{
 render :update do |page| 
-page[:question_subcategory_id].replace collection_select(:question,:subcategory_id, @subcategories , :id, :name)
+page[:question_subcategory_id].replace collection_select(:question,:subcategory_id, @subcategories , :id, :name,{},{:style =>'width:17%'})
 end
 }
 end

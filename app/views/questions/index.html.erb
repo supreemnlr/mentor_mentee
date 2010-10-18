@@ -1,28 +1,28 @@
 <html>
-<<<<<<< HEAD
+
 <body bgcolor = "silver">
 
 <img src ="/images/discuss.jpg" width="100%" height="100px" align = "top"/>
-=======
+
 <body >
->>>>>>> 902e3766cf49a1d370adab645075f23243d026b5
-<h1> Questions </h1>
-<% @ques = Question.find(:all)%>
+
+<h1><blink><%= link_to 'Post A Question', new_question_path %><blink></h1><br /><br />
+<% @ques = Question.find(:all, :order => 'created_at  DESC')%>
 
 <% @ques.each do |questions| %>
-<<<<<<< HEAD
-=======
 
->>>>>>> 902e3766cf49a1d370adab645075f23243d026b5
   <h5><%=  link_to questions.name ,:controller => 'questions',:action => 'show' ,:id => questions.id%></h5>
    <% @count = Answer.where(:question_id => questions.id) %>   
- <h6> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; in <%= link_to Category.find(questions.category_id).name unless questions.category_id.blank?%> &nbsp; &nbsp; &nbsp; Answers(<%=  @count.count %>) &nbsp; &nbsp; &nbsp; Posted <%= time_ago_in_words(questions.created_at) %> ago</h6>
+<% @subcat = Subcategory.find(questions.subcategory_id)%>
+ <h6> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; in 
+ <%= link_to @subcat.name ,:controller => 'credentials',:action => 'question' ,:id => @subcat.id %> 
+&nbsp; &nbsp; &nbsp; Answers(<%=  @count.count %>) &nbsp; &nbsp; &nbsp; Posted <%= time_ago_in_words(questions.created_at) %> ago</h6><br /><br />
 
 <%end%>
 <%= yield%>
 </h>
 <br />
-<h3><blink><%= link_to 'Post A Question', new_question_path %><blink></h3>
+
 </body>
 </html>
 

@@ -4,15 +4,15 @@
  
 
 <p>
-  
+  <br />
 <h2> <b>Question:</b> <%= @question.name %></h2>
 <br /> <br />
-<%= link_to "Answer This Question" ,:controller => 'answers',:action =>'new',:id => @question.id%>
+<%= link_to "Answer This Question" ,:controller => 'answers',:action =>'new',:id => @question.id%><br /><br /><br /><br />
 </p>
 <% @answerlist.each do |answer| %>
   <tr>
      <td> <h5><%= answer.name%> </h5></td>   
-     Posted <%= time_ago_in_words(answer.created_at) %> ago
+     Posted <%= time_ago_in_words(answer.created_at) %> ago <br /><br />
 <% end%>
 
 </body>

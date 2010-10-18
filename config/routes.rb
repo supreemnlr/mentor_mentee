@@ -18,6 +18,7 @@ end
 	get "credentials/studymat"
 	get "credentials/career"
 	get "credentials/contactus"
+       get "credentials/question"
   devise_for :users, :path_names => { :sign_up => "register" } 
 
   

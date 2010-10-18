@@ -1,5 +1,6 @@
 class AnswersController < ApplicationController
 layout 'application'
+prepend_before_filter :authenticate_user!
   # GET /answers
   # GET /answers.xml
   def index

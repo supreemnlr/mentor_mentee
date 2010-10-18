@@ -21,28 +21,24 @@
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
-  </div>
+  </div><br />
 <div class="field">
     <%= f.label :Description %><br />
-    <%= f.text_area :description ,:rows => 5,:cols => 34%>
-  </div>
+    <%= f.text_area :description ,:rows => 5,:cols => 34 %>
+  </div><br />
   <div class="field">
-    <%= f.label :category_id %><br />
+    <%= f.label :category_id %><br /> 
   
-      <%= f.collection_select :category_id, Category.find(:all), :id, :name ,{},{ :onchange=>"#{remote_function(:url=>{:action=>'load_subcategories'} ,:with =>"'id='+value")}" }%>	
+      <%= f.collection_select :category_id, Category.find(:all), :id, :name ,{:prompt=>'----select category---'},{ :onchange=>"#{remote_function(:url=>{:action=>'load_subcategories'},:with =>"'id='+value")}" }%>	
 
-  </div>
+  </div><br />
 
 
   <div class="field">
     <%= f.label :subcategory_id %><br />
-    
-<<<<<<< HEAD
-  <span id='test'><%= f.collection_select :subcategory_id, Subcategory.find(:all), :id, :name %><br /><br /></span>
-=======
-  <%= f.collection_select :subcategory_id, Subcategory.find(:all), :id, :name %><br /><br />
->>>>>>> 902e3766cf49a1d370adab645075f23243d026b5
-  </div>
+    <%= f.collection_select :subcategory_id, {},:id, :name,{},{:style=>'width:17.5%'} %><br /><br /> 
+
+  </div><br />
   <div class="actions">
    
     <%= f.submit %>
