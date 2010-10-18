@@ -1,11 +1,12 @@
+<table  class="stats" cellspacing="0">
 <%= form_for([:admin,@category]) do |f| %>
  
 
-  <div class="field"><br /><br />
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= f.label :Category %>
-    &nbsp;&nbsp;<%= f.text_field :name %> 
-  </div><br/><br />
-  <div class="actions">
-   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%= f.submit %>
+ <tr><td> <div class="field"><br /><br />
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= f.label :Category %>
+    &nbsp;&nbsp;<%= f.text_field :name %> <br/><br />
   </div>
-<% end %>
+  <div class="actions">
+<%= f.submit %></td></tr>
+  </div>
+<% end %></table>

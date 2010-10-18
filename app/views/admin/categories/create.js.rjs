@@ -1,8 +1,6 @@
 if @category.valid? 
-page.insert_html :bottom,'cat',"<ul><tr id='cat_#{@category.id}' ><td><li>#{@category.name}</li></td>
-    <td></td>
-    <td></td>
-    <td></td></tr></ul>"
+page.insert_html :bottom,'cat',"<ul><tr id='cat_#{@category.id}' ><td>#{@category.name}</td>
+  </tr></ul>"
 page["cat_#{@category.id}"].visual_effect :highlight
 page.hide 'form'
 else

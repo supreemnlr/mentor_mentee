@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <%= csrf_meta_tag %>
-  <%= javascript_include_tag :defaults,'prototype' %>
+
 	<title>Mentor-Mentee</title>
-  <%= stylesheet_link_tag 'base', 'layout', 'design','menu','form', :media => :all %>
+  <%= stylesheet_link_tag 'base', 'layout', 'design','menu','form','table1', :media => :all %>
   <%= javascript_include_tag :defaults%>
 <style type="text/css">
 a { text-decoration:none } 
@@ -50,14 +50,14 @@ a { text-decoration:none }
 <span class="st_twitter_large" displayText="Tweet"></span><span class="st_facebook_large" displayText="Facebook"></span><span class="st_ybuzz_large" displayText="Yahoo! Buzz"></span><span class="st_gbuzz_large" displayText="Google Buzz"></span><span class="st_email_large" displayText="Email"></span><span class="st_sharethis_large" displayText="ShareThis"></span>
 
 	<div id = "user_nav">
-<%if user_signed_in? %>
-    <p align = right >Hello, <%= current_user.email %> |
-   <%= link_to "Sign_out",destroy_user_session_path %></p>
- <% else %>
- <p align = right>  <%= link_to "Login", new_user_session_path %>   <%= link_to "Register", new_user_registration_path %>
-  </p>
- <% end %>
 
+  <%if user_signed_in? %>
+     <p align = right >Hello, <%= current_user.email %> |
+    <%= link_to "Sign_out",destroy_user_session_path %></p>
+  <% else %>
+  <p align = right>  <%= link_to "Login", new_user_session_path %>&nbsp;&nbsp; <%= link_to "Register", new_user_registration_path %> 
+   </p>
+  <% end %>
 </div>
 				</ul>
 			</nav>

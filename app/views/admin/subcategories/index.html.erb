@@ -1,13 +1,19 @@
  <%= stylesheet_link_tag 'saveedit',:media => "all" %>	
-<img src="/images/Listingsubcategories.gif" border="0"/>
+<img src="/images/Listingsubcategories.gif" border="0"/><br/>
 
-<table id='subcat'>
+<a href="#" onclick="Effect.toggle('form','blind');"><img src="/images/new_subcategory.gif" border="0"/></a>
+<div id="form" style="background-color:#CCCCCC ; width: 550px; display:none;">
+<%=render :partial=>'formduplicat'%><br/>
+<br/>
+
+</div>
+
+<table id='subcat' class="stats" cellspacing="0">
   <tr>
    
     <th>Category</th>
     <th>Subcategory</th>
-    <th></th>
-    <th></th>
+  
   </tr>
   <ul>
 <% @subcategories.each do |subcategory| %>
@@ -15,7 +21,7 @@
   
     
   
-   <td> <li> <%= subcategory.category.name %></li></td>
+   <td>  <%= subcategory.category.name %></td>
    <td><%= subcategory.name %></td>
 <td>   
 <ul id="css3menu" class="topmenu">
@@ -43,12 +49,6 @@
 
 <br />
 
-<!--  <%= link_to 'New Subcategory', new_admin_subcategory_path %>  -->
 
-<a href="#" onclick="Effect.toggle('form','blind');"><img src="/images/newsubcat.gif" border="0"/></a>
-<div id="form" style="background-color:#4CC552;display:none;">
-<%=render :partial=>'formduplicat'%><br/>
-<br/>
 
-</div>
 

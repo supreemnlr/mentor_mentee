@@ -1,0 +1,23 @@
+<img src="/images/mentees.gif" border="0"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<%= link_to image_tag("/images/pdf.png", :border=>0), :controller=>"admin/mentees", :action=> "show" , :format=> "pdf" %>
+<br/><br/>
+<table class="stats" cellspacing="0">
+<th><h3>Name</h3></th>
+<th><h3>Email</h3></th>
+<th><h3>Contact No</h3></th>
+
+<tr> 
+<% @users.each do |user| %>
+
+  
+    <% if user.role== "Mentee" %>
+  
+ <td>  <%= user.fname %></td>
+  <td> <%= user.email %></td>
+  <td> <%= user.phone %></td></tr>
+    
+
+<% end %>
+
+<% end %></table>
+

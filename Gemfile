@@ -1,9 +1,4 @@
 source 'http://rubygems.org'
-<<<<<<< HEAD
-#directory "/usr/bin/rails", :glob => "{*/,}*.gemspec"
-
-=======
->>>>>>> 31a48f4099fcbb35cb380bbc2504ca17d5c6e96d
 
 gem 'rails', '3.0.0'
 
@@ -12,16 +7,9 @@ gem 'rails', '3.0.0'
 
 gem 'mysql'
 gem 'devise','1.1.2'
-<<<<<<< HEAD
-gem 'ajaxful_rating'
-gem 'will_paginate'
-
 gem "cancan"
-
-=======
-gem "cancan"
+gem "prawn"
 gem "paperclip"
->>>>>>> 31a48f4099fcbb35cb380bbc2504ca17d5c6e96d
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -35,10 +23,6 @@ gem "paperclip"
 # Bundle the extra gems:
 # gem 'bj'
 # gem 'nokogiri'
-<<<<<<< HEAD
-  
-=======
->>>>>>> 31a48f4099fcbb35cb380bbc2504ca17d5c6e96d
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
 

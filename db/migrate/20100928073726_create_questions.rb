@@ -5,6 +5,7 @@ class CreateQuestions < ActiveRecord::Migration
       t.integer :category_id
       t.integer :subcategory_id
       t.integer :user_id
+      t.string  :avatar_file_name
       t.string  :description
 
       t.timestamps

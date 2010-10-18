@@ -1,13 +1,21 @@
 MentorMentee::Application.routes.draw do
 
+ 
+
   resources :answers
   resources :questions do 
  get 'load_subcategories',:on => :collection
+
 end 
 
   namespace :admin do resources :subcategories end
 
   namespace :admin do resources :categories end
+
+  namespace :admin do resources :mentors end
+
+  namespace :admin do resources :mentees end
+
 
   namespace :admin do resources :home
 	get "accounts"
@@ -18,11 +26,7 @@ end
 	get "credentials/studymat"
 	get "credentials/career"
 	get "credentials/contactus"
-<<<<<<< HEAD
-       get "credentials/question"
-=======
 	get "credentials/question"
->>>>>>> 31a48f4099fcbb35cb380bbc2504ca17d5c6e96d
   devise_for :users, :path_names => { :sign_up => "register" } 
 
   
@@ -85,8 +89,9 @@ end
 get "myprofiles/edit"
 get "myprofiles/update"
 get "myprofiles/index"
-  resources :credentials
-   resources :myprofiles
+  resources :credentials 
+   resources :users
+resources :myprofiles
   resources :login
   resources :questions
   resources :answers

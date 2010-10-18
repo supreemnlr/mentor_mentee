@@ -7,7 +7,8 @@
 <% @ques.each do |questions| %>
 
 
- <h3><%=  link_to questions.name ,:controller => 'questions',:action => 'show' ,:id => questions.id%></h3>
+ <h3> <%= image_tag questions.avatar.url(:thumb) %>
+<%=  link_to questions.name ,:controller => 'questions',:action => 'show' ,:id => questions.id%></h3>
    <% @count = Answer.where(:question_id => questions.id) %>   
   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; in <%= link_to Category.find(questions.category_id).name unless questions.category_id.blank?%> &nbsp; &nbsp; &nbsp; Answers(<%=  @count.count %>)- <%= time_ago_in_words(questions.created_at) %> ago
 

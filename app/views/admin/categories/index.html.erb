@@ -1,17 +1,19 @@
-<img src="/images/Listingcategories.gif" border="0"/>
+<img src="/images/Listingcategories.gif" border="0"/><br/>
+<a href="#" onclick="Effect.toggle('form','blind');" ><img src="/images/newcategory.gif" border="0"/></a><br />
+<div id="form" style="background-color:#CCCCCC; width: 550px; display:none;"><br />
+<%=render :partial=>'formduplicate'%><br /><br />
+</div>
 
-<table id='cat'>
+<table id='cat' class="stats" cellspacing="0">
   <tr>
     <th><h3>Categories</h3></th>
-    <th></th>
-    <th></th>
-    <th></th>
+
   </tr>
 <ul>
 <% @categories.each do |admin_category| %>
   <tr>
-   <td><li><%= link_to admin_category.name, :action=> 'show', :id => admin_category.id  %>
-           <%= "(#{admin_category.subcategories.count})" -%></li></td>
+   <td><%= link_to admin_category.name, :action=> 'show', :id => admin_category.id  %>
+           <%= "(#{admin_category.subcategories.count})" -%></td>
 </ul>
    
 
@@ -27,8 +29,4 @@
 
 <!--   <%= link_to 'New Category', new_admin_category_path %>   -->
 
-<a href="#" onclick="Effect.toggle('form','blind');" ><img src="/images/newcat.gif" border="0"/></a><br />
-<div id="form" style="background-color:#4CC552;display:none;"><br />
-<%=render :partial=>'formduplicate'%><br /><br />
-</div>
 

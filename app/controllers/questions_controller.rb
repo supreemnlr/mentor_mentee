@@ -1,10 +1,7 @@
 class QuestionsController < ApplicationController
 layout 'application'
 prepend_before_filter :authenticate_user!
-<<<<<<< HEAD
-=======
 
->>>>>>> 31a48f4099fcbb35cb380bbc2504ca17d5c6e96d
   # GET /questions
   # GET /questions.xml
   def index
@@ -54,6 +51,7 @@ prepend_before_filter :authenticate_user!
   def create
     @question = Question.new(params[:question] )
     @question.user_id=current_user.id
+    @question.avatar_file_name =current_user.avatar_file_name
    respond_to do |format|
     if @question.save
          format.html { render :action => "create" }    
@@ -98,7 +96,7 @@ puts "#### Category Id - #{params[:id]}"
 respond_to do |format|
 format.js{
 render :update do |page| 
-page[:question_subcategory_id].replace collection_select(:question,:subcategory_id, @subcategories , :id, :name,{},{:style =>'width:17%'})
+page[:question_subcategory_id].replace collection_select(:question,:subcategory_id, @subcategories , :id, :name)
 end
 }
 end

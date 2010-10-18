@@ -5,7 +5,7 @@
 
 <tr><td><h2> Personal Details : </h2>  </td></tr>
 
-<%= form_for(:user,  :url =>{:controller =>'myprofiles',:action =>"update", :id => current_user.id}) do|f| %>
+<%= form_for(:user,  :url =>{:controller =>'myprofiles',:action =>"update", :id => current_user.id}, :html => { :multipart => true }) do|f| %>
   <tr><td>
          <%= f.label :FirstName %>
          <%= f.text_field :fname %> </td></tr>
@@ -34,7 +34,10 @@
                   <%= radio_button("user","role","Mentor") %>Mentor   <%= radio_button("user","role","Mentee") %>Mentee</p>
             </td>
          </tr>
-         
+      <tr>
+             <td>     <%= f.file_field :avatar %></td>
+           </tr>
+
            <tr>
              <td> 
                   <p>Country

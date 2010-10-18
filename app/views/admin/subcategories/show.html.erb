@@ -1,15 +1,16 @@
  <%= stylesheet_link_tag 'saveedit',:media => "all" %>	
 <p id="notice"><%= notice %></p>
-<br /><br /><br />
-<p>&nbsp;&nbsp;
-  <b>Category:</b>
-   <%= @subcategory.category.name %>
-</p>
+<table  class="stats" cellspacing="0" style={width: 550px;}>
+<br />
 
-<p>&nbsp;&nbsp;
-  <b>Subcategory:</b>
-  <%= @subcategory.name %><br />
-</p><br />
+
+<th> <h2><%= @subcategory.category.name %><br /></h2></th>
+
+
+
+
+   <tr><td> <%= @subcategory.name %></td></tr><br />
+<br /></table><br />
 
 <ul id="css3menu" class="topmenu">
 	<li class="topfirst"><%= link_to 'Edit', edit_admin_subcategory_path(@admin_subcategory) %> </li>

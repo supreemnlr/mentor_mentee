@@ -1,16 +1,16 @@
  <%= stylesheet_link_tag 'saveedit',:media => "all" %>	
 <p id="notice"><%= notice %></p>
+<table  class="stats" cellspacing="0">
 
-<p>
-  <b><h3>Category: </h3></b><br/>
-  <%= @category.name %>
-</p><br/>
-<ul> 
-<h3> Subcategories: </h3><br/>
+ <th> <b><h1> 
+  <%= @category.name %></h1></b></th>
+<br/>
 
+
+<tr>
 <%@category.subcategories.each do |s|%>
-  <li><%= s.name%></li></ul>
-<%end%>
+  <td><%= s.name%></td></tr>
+<%end%> </table
 <br/>
 
 <ul id="css3menu" class="topmenu">
@@ -18,11 +18,8 @@
 	<li class="topmenu"><%= link_to 'Back', admin_categories_path %> </li>
 	<li class="toplast"><%= link_to 'Destroy',  @admin_category, :confirm => 'Are you sure?', :method => :delete  %> </li>
 
-</ul></td>
+</ul>
 
 
-<!--    	<%= link_to image_tag("/images/edit.gif", :border=>0), edit_admin_category_path(@category) %> 
-		<%= link_to image_tag("/images/back.gif", :border=>0), admin_categories_path %> 
-		<%= link_to image_tag("/images/destroy.gif", :border=>0), @admin_category, :confirm => 'Are you sure?', :method => :delete %></td>   
--->
- 
+
+

@@ -1,0 +1,34 @@
+
+<table  CLASS="formbg" >
+  <tr>
+   
+   <br/><br/><br/>
+ <th>First name</th>
+    <th>Last name</th>
+    <th>Email</th>
+    <th>Date of Birth</th>
+<th>Contact No</th>
+<th>Role</th>
+<th></th><th></th>
+  </tr>
+  
+
+
+
+
+ <tr> <%= image_tag @users.avatar.url(:medium) %>
+   <td> <%= @users.fname %></td>
+   <td> <%= @users.lname %></td>
+<td> <%= @users.email %></td>
+<td> <%= @users.dob %></td>
+<td> <%= @users.phone %></td>
+<td> <%= @users.role %></td>
+
+
+
+
+</tr>
+
+
+</table>
+<%= link_to "Edit", myprofiles_edit_path%>

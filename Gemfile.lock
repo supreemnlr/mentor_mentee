@@ -28,10 +28,6 @@ GEM
       activemodel (= 3.0.0)
       activesupport (= 3.0.0)
     activesupport (3.0.0)
-<<<<<<< HEAD
-    ajaxful_rating (2.2.8.2)
-=======
->>>>>>> 31a48f4099fcbb35cb380bbc2504ca17d5c6e96d
     arel (1.0.1)
       activesupport (~> 3.0.0)
     bcrypt-ruby (2.1.2)
@@ -49,13 +45,17 @@ GEM
       treetop (>= 1.4.5)
     mime-types (1.16)
     mysql (2.8.1)
-<<<<<<< HEAD
-=======
     paperclip (2.3.4)
       activerecord
       activesupport
->>>>>>> 31a48f4099fcbb35cb380bbc2504ca17d5c6e96d
     polyglot (0.3.1)
+    prawn (0.8.4)
+      prawn-core (>= 0.8.4, < 0.9)
+      prawn-layout (>= 0.8.4, < 0.9)
+      prawn-security (>= 0.8.4, < 0.9)
+    prawn-core (0.8.4)
+    prawn-layout (0.8.4)
+    prawn-security (0.8.4)
     rack (1.2.1)
     rack-mount (0.6.13)
       rack (>= 1.0.0)
@@ -81,26 +81,14 @@ GEM
     tzinfo (0.3.23)
     warden (0.10.7)
       rack (>= 1.0.0)
-<<<<<<< HEAD
-    will_paginate (2.3.15)
-=======
->>>>>>> 31a48f4099fcbb35cb380bbc2504ca17d5c6e96d
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-<<<<<<< HEAD
-  ajaxful_rating
-  cancan
-  devise (= 1.1.2)
-  mysql
-  rails (= 3.0.0)
-  will_paginate
-=======
   cancan
   devise (= 1.1.2)
   mysql
   paperclip
+  prawn
   rails (= 3.0.0)
->>>>>>> 31a48f4099fcbb35cb380bbc2504ca17d5c6e96d

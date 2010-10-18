@@ -62,7 +62,7 @@ a { text-decoration:none }
 				</ul>
 			</nav>
 		</header>
-<br/><br/><br/><%= link_to 'My Questions', :controller => 'myprofiles', :action => 'myquestions', :id=>current_user.id %> | <%= link_to 'My Answers' %>	
+<br/><br/><br/><%= link_to 'My Questions', :controller => 'myprofiles', :action => 'myquestions', :id=>current_user.id %> | <%= link_to 'My Answers' %> | <%= link_to 'My Profile', :controller => 'myprofiles', :action => 'index' %>	
 		<section id="main" class="clearfix">
      
 			<% if flash[:notice] %><p class="notice"><%= flash[:notice] %></p><% end %>
