@@ -18,7 +18,11 @@ end
 	get "credentials/studymat"
 	get "credentials/career"
 	get "credentials/contactus"
+<<<<<<< HEAD
        get "credentials/question"
+=======
+	get "credentials/question"
+>>>>>>> 31a48f4099fcbb35cb380bbc2504ca17d5c6e96d
   devise_for :users, :path_names => { :sign_up => "register" } 
 
   
@@ -78,7 +82,11 @@ end
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
+get "myprofiles/edit"
+get "myprofiles/update"
+get "myprofiles/index"
   resources :credentials
+   resources :myprofiles
   resources :login
   resources :questions
   resources :answers

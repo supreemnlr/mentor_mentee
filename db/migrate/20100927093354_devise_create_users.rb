@@ -12,8 +12,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :country
       t.string :city
       t.string :phone
-      t.string :mentor_category
-      t.string :mentee_category
+      t.string :role
       t.string :picture
       t.string :remember_me
       t.boolean :verify => false

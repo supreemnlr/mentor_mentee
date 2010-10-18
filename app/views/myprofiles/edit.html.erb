@@ -1,0 +1,69 @@
+<BR/><h1> My Profile</h1>
+<center>
+<table CLASS="formbg">
+
+
+<tr><td><h2> Personal Details : </h2>  </td></tr>
+
+<%= form_for(:user,  :url =>{:controller =>'myprofiles',:action =>"update", :id => current_user.id}) do|f| %>
+  <tr><td>
+         <%= f.label :FirstName %>
+         <%= f.text_field :fname %> </td></tr>
+   <tr><td>
+         <%= f.label :LastName %>
+         <%= f.text_field :lname %></p>
+      </td>
+   </tr>
+ 
+     <tr>
+         <td>
+            <p>Date of Birth: <%= f.date_select :dob, :start_year =>
+               1920, :end_year => 2099, :use_month_numbers => true, :include_blank => true %><i>(In YYYY-MM-DD)</i></p>
+         </td>
+     </tr>
+       
+        <tr>
+          <td>
+              <p> Gender
+                  <%= radio_button("user","gender","Male") %>Male   <%= radio_button("user","gender","Female") %>Female</p>
+            </td>
+         </tr>
+               <tr>
+          <td>
+              <p> Role
+                  <%= radio_button("user","role","Mentor") %>Mentor   <%= radio_button("user","role","Mentee") %>Mentee</p>
+            </td>
+         </tr>
+         
+           <tr>
+             <td> 
+                  <p>Country
+                    <%= f.text_field :country %></p>
+              </td>
+           </tr>
+              <tr>
+                 <td> 
+                     <p>State
+                       <%= f.text_field :state %></p>
+                  </td>
+               </tr>
+                  <tr>
+                     <td> 
+                        <p>City
+                        <%= f.text_field :city %></p>
+                       </td>
+                   </tr>
+                      <tr>
+                        <td> 
+                            <p>Phone
+                               <%= f.text_field :phone %></p>
+                         </td>
+                     </tr>
+   
+<tr>
+     <td><%= f.submit "Update" %>  </td>
+                     </tr>
+
+<% end %>
+</center>
+</table>

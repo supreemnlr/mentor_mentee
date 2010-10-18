@@ -74,13 +74,13 @@ h1,h2,h3,h4,h5,h6 { font-weight: bold; }
 html { overflow-y: scroll; }
 
 a:hover, a:active { outline: none; }
-a, a:active, a:visited { color: #167ee5; }
+a, a:active, a:visited { color: #14AF19; }
 a:hover { color: #036; }
 
 ul, ol { margin-left: 1.8em; }
 ol { list-style-type: decimal; }
 
-small { font-size: 85%; }
+small { font-size: 100%; }
 strong, th { font-weight: bold; }
 
 td, td img { vertical-align: top; } 

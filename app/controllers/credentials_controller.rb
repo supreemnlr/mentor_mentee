@@ -17,10 +17,7 @@ class CredentialsController < ApplicationController
  def career
  end
 
- def myprofile
 
-
- end
 
  def studymat
 
@@ -36,16 +33,30 @@ class CredentialsController < ApplicationController
     end
 
  end
+<<<<<<< HEAD
 def question
 @ques = Question.where("subcategory_id =?" ,params[:id])
 
 end
+=======
+ 
+ 
+def question
+@ques = Question.where("subcategory_id =?",params[:id])
+
+end
+
+>>>>>>> 31a48f4099fcbb35cb380bbc2504ca17d5c6e96d
 
 def show
     @category = Category.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
+<<<<<<< HEAD
+=======
+
+>>>>>>> 31a48f4099fcbb35cb380bbc2504ca17d5c6e96d
       format.xml  { render :xml => @category }
     end
   end

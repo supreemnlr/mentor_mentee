@@ -1,26 +1,17 @@
-<html>
-<body bgcolor="silver">
 <center>
+<table CLASS="formbg" >
+
 <h2><p id="notice"><%= notice %></p></h2>
 <table>
 <tr>
-<p>
-  <b>Name:</b>
-  <%= @question.name %>
-</p>
-</tr>
-<tr>
-<p>
+<tr><td>
+  <br/><b>Name:</b>
+  <%= @question.name %></td></tr>
+
+<tr><td>
   <b>Description:</b>
-  <%= @question.description %>
-</p>
-</tr>
-</table>
+  <%= @question.description %></td></tr>
 
+<tr><td><%= link_to 'Back', questions_path,:id => @question.id %> </td></tr>
 
-
-
-<%= link_to 'Back', questions_path,:id => @question.id %> 
-</center>
-</body>
-</html> 
+</table ></center>

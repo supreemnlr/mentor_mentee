@@ -1,0 +1,13 @@
+<html>
+<head>
+<style href>a {text-decoration: none} </style>
+
+</head>
+<body bgcolor ="silver">
+<%= link_to 'My Questions', :action => 'myquestions', :id=>current_user.id %> | <%= link_to 'My Answers' %>
+<p ALIGN="center">
+<h align ="left">
+<%= yield%>
+</p>
+</body>
+</html>     

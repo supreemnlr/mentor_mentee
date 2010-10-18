@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <html>
 
 <body bgcolor = "silver">
@@ -17,12 +18,28 @@
  <h6> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; in 
  <%= link_to @subcat.name ,:controller => 'credentials',:action => 'question' ,:id => @subcat.id %> 
 &nbsp; &nbsp; &nbsp; Answers(<%=  @count.count %>) &nbsp; &nbsp; &nbsp; Posted <%= time_ago_in_words(questions.created_at) %> ago</h6><br /><br />
+=======
+<br/><br/><br/><h1><blink><%= link_to 'Post A Question', new_question_path %><blink></h1><br/>
+
+<h1><br/> Questions </h1>
+<% @ques = Question.find(:all)%>
+
+<% @ques.each do |questions| %>
+
+
+ <h3><%=  link_to questions.name ,:controller => 'questions',:action => 'show' ,:id => questions.id%></h3>
+   <% @count = Answer.where(:question_id => questions.id) %>   
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; in <%= link_to Category.find(questions.category_id).name unless questions.category_id.blank?%> &nbsp; &nbsp; &nbsp; Answers(<%=  @count.count %>)- <%= time_ago_in_words(questions.created_at) %> ago
+>>>>>>> 31a48f4099fcbb35cb380bbc2504ca17d5c6e96d
 
 <%end%>
 <%= yield%>
 </h>
 <br />
 
+<<<<<<< HEAD
 </body>
 </html>
+=======
+>>>>>>> 31a48f4099fcbb35cb380bbc2504ca17d5c6e96d
 

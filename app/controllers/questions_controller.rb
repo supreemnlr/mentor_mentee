@@ -1,6 +1,10 @@
 class QuestionsController < ApplicationController
 layout 'application'
 prepend_before_filter :authenticate_user!
+<<<<<<< HEAD
+=======
+
+>>>>>>> 31a48f4099fcbb35cb380bbc2504ca17d5c6e96d
   # GET /questions
   # GET /questions.xml
   def index
@@ -18,7 +22,7 @@ prepend_before_filter :authenticate_user!
   # GET /questions/1.xml
   def show
     @question = Question.find(params[:id])
-    @answerlist = Answer.where("question_id = ?", @question.id)
+    @answerlist = Answer.where("question_id = ?", @question.id )
    
   end
 
@@ -48,7 +52,8 @@ prepend_before_filter :authenticate_user!
   # POST /questions
   # POST /questions.xml
   def create
-    @question = Question.new(params[:question])
+    @question = Question.new(params[:question] )
+    @question.user_id=current_user.id
    respond_to do |format|
     if @question.save
          format.html { render :action => "create" }    

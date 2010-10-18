@@ -18,7 +18,7 @@ prepend_before_filter :authenticate_user!
    # @answer = Answer.find(params[:id])
     @ques = Question.find(params[:id])
     @answerlist = Answer.where("question_id = ?", @ques.id )
-    @answerlist= @answerlist.paginate :page => params[:page], :per_page =>2,:order=>'created_at DESC'
+    
     
 
     #respond_to do |format|
@@ -46,6 +46,7 @@ prepend_before_filter :authenticate_user!
     @answer.question_id = params[:q_id].to_i
     @answerlist = Answer.where("question_id = ?", @answer.question_id)   
     @question = Question.find(params[:q_id]) 
+    @answer.user_id=current_user.id
    respond_to do |format|
     if @answer.save     
     format.html { render :action => "create"}

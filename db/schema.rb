@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(:version => 20101018064209) do
   create_table "answers", :force => true do |t|
     t.string   "name"
     t.integer  "question_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -29,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20101018064209) do
     t.string   "name"
     t.integer  "category_id"
     t.integer  "subcategory_id"
+    t.integer  "user_id"
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -51,6 +53,19 @@ ActiveRecord::Schema.define(:version => 20101018064209) do
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
+<<<<<<< HEAD
+=======
+    t.string   "password"
+    t.date     "dob"
+    t.string   "gender"
+    t.string   "state"
+    t.string   "country"
+    t.string   "city"
+    t.string   "phone"
+    t.string   "role"
+    t.string   "picture"
+    t.string   "remember_me"
+>>>>>>> 31a48f4099fcbb35cb380bbc2504ca17d5c6e96d
     t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
     t.string   "password_salt",                       :default => "", :null => false
     t.string   "reset_password_token"
