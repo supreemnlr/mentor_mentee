@@ -9,7 +9,7 @@ gem 'mysql'
 gem 'devise','1.1.2'
 gem "cancan"
 gem "prawn"
-gem "paperclip"
+#gem "paperclip"
 
 # Use unicorn as the web server
 # gem 'unicorn'
